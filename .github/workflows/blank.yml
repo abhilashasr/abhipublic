@@ -21,6 +21,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - run: mvn -B package --file pom.xml
       - run: mvn --batch-mode --update-snapshots verify
       - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v3
