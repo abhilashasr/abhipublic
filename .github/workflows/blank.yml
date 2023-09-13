@@ -13,6 +13,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn exec:java -Dexec.mainClass="crawler.WebInterface" -Dexec.args="${current.project.path}/database ${current.project.path}/www" -f ${current.project.path} pom.xml
 
 
