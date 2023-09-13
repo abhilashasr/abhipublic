@@ -21,7 +21,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - run: mvn -B package --file pom.xml
+      - run: mvn exec:java -Dexec.mainClass="crawler.WebInterface" -Dexec.args="${current.project.path}/database ${current.project.path}/www" -f ${current.project.path} youPomFile.xml
       - run: mvn --batch-mode --update-snapshots verify
       - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v3
