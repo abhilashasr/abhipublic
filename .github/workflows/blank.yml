@@ -13,7 +13,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Maven
-      - run: mvn clean install -e
+      - run: mvn -f /home/runner/work/abhipublic/abhipublic/pom.xml clean install
+
       # - run: nano /home/runner/work/abhipublic/abhipublic/C:/Users/AArmijos/workspace/componentes-1.0.4/deps/jss-4.2.5.jar
       # - run: mvn --batch-mode --update-snapshots package
    
