@@ -1,10 +1,10 @@
 name: Java CI
 
 on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -13,8 +13,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Maven
-      - run: mvn -f /home/runner/work/abhipublic/abhipublic/pom.xml clean install
+        run: mvn --batch-mode --update-snapshots package
 
-      # - run: nano /home/runner/work/abhipublic/abhipublic/C:/Users/AArmijos/workspace/componentes-1.0.4/deps/jss-4.2.5.jar
-      # - run: mvn --batch-mode --update-snapshots package
-   
+
